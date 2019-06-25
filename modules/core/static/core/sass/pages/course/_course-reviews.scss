@@ -1,0 +1,63 @@
+.course-reviews {
+  padding: 0 20px 50px;
+
+  @media (min-width: 769px) {
+    padding-bottom: 90px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  @media (min-width: 1025px) {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+
+.reviews__title {
+  @extend .profit__title;
+}
+
+.reviews__list__item {
+  margin-bottom: 35px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 769px) {
+    display: flex;
+    margin-bottom: 60px;
+  }
+}
+
+.reviewer__thumb {
+  min-width: 126px;
+  width: 126px;
+  height: 126px;
+  margin: 0 auto 10px;
+
+  @media (min-width: 769px) {
+    margin-left: 0;
+    margin-right: 30px;
+    margin-bottom: 0;
+  }
+}
+
+.reviewer__text__name {
+  font-size: 20px;
+  margin-bottom: 16px;
+  text-align: center;
+
+  @media (min-width: 769px) {
+    margin-bottom: 24px;
+    text-align: left;
+  }
+
+  @media (min-width: 1025px) {
+    font-size: 30px;
+  }
+}
+
+.reviewer__text__desc {
+  line-height: 30px;
+}

@@ -1,0 +1,22 @@
+.course-cost {
+  text-align: center;
+  padding: 50px 20px 30px;
+
+  @media (min-width: 769px) {
+    padding-top: 90px;
+    padding-left: 25%;
+    padding-right: 25%;
+  }
+}
+
+.course-cost__title {
+  text-transform: none;
+  margin-bottom: 20px;
+}
+
+.course-cost__content {
+  p {
+    line-height: 28px;
+    margin-bottom: 45px;
+  }
+}

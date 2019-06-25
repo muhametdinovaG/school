@@ -1,0 +1,73 @@
+/*
+**  Страница `Главная (список курсов)`
+*/
+.list-courses {
+  @media (min-width: 1025px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.course-item__thumb {
+  position: relative;
+  padding-bottom: 56.25%;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+}
+
+.list-courses__course {
+  display: block;
+  padding: 15px;
+
+  @media (min-width: 1025px) {
+    width: 50%;
+  }
+}
+
+.course-item {
+  position: relative;
+}
+
+.course-item__text {
+  width: 100%;
+  height: 100%;
+  min-height: 101px;
+  background: rgba(0, 0, 0, 0.43);
+  color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 23px 20px;
+
+  @media (min-width: 769px) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    padding: 7px 32px 20px 32px;
+    height: auto;
+  }
+}
+
+.course-item__text__title {
+  line-height: 1;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+  width: 100%;
+
+  @media (min-width: 769px) {
+    font-size: 30px;
+    font-size: 2vw;
+  }
+
+  @media (min-width: 1025px) {
+    margin-bottom: 4px;
+  }
+}
+
+.course-item__text__desc {
+  width: 100%;
+}

@@ -1,0 +1,120 @@
+.course-stage {
+  background: radial-gradient(134.73px at 50% 50%,
+  rgba(0, 203, 255, 0.8) 0%, rgba(0, 105, 150, 0.8) 100%);
+  color: #fff;
+  text-align: center;
+  padding: 36px 20px 72px;
+
+  @media (min-width: 769px) {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  @media (min-width: 1025px) {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+.course-stage__title {
+  text-transform: none;
+  margin-bottom: 20px;
+}
+
+.course-stage__content {
+  p {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+.stages__item__decor {
+  width: 67px;
+  height: 67px;
+  background: #00CBFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:after {
+    position: absolute;
+    top: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media (min-width: 769px) {
+      left: auto;
+      transform: none;
+      width: 25%;
+    }
+  }
+}
+
+.stages {
+  @media (min-width: 769px) {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+  }
+}
+
+.stages__item {
+  margin-bottom: 60px;
+  position: relative;
+
+  &:nth-of-type(1) {
+    .stages__item__decor:after {
+      content: 'Теория';
+
+      @media (min-width: 769px) {
+        left: 0;
+      }
+    }
+  }
+
+  &:nth-of-type(2) {
+    .stages__item__decor:after {
+      content: 'Практика';
+
+      @media (min-width: 769px) {
+        left: 25%;
+      }
+    }
+  }
+
+  &:nth-of-type(3) {
+    .stages__item__decor:after {
+      content: 'Домашнее задание';
+
+      @media (min-width: 769px) {
+        left: 50%;
+      }
+    }
+  }
+
+  &:nth-of-type(4) {
+    .stages__item__decor:after {
+      content: 'Выпускная работа';
+
+      @media (min-width: 769px) {
+        left: 75%;
+      }
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 769px) {
+    margin-bottom: 0;
+    position: static;
+  }
+}
+
+// .stages__item__title {
+//   margin-top: 12px;
+// }

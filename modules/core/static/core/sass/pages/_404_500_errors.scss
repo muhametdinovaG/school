@@ -1,0 +1,21 @@
+/*
+**  Стили для страниц с ошибками 404 и 500
+ */
+.main__content_error {
+  padding-bottom: 60px;
+
+  .title {
+    font-size: 100px;
+    color: $button_orange;
+  }
+
+  .desc {
+    text-align: center;
+
+    p:first-child {
+      font-size: 25px;
+      color: $button_orange;
+      margin-bottom: 18px;
+    }
+  }
+}

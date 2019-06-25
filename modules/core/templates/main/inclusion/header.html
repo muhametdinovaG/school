@@ -1,0 +1,47 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load webpack_static from webpack_loader %}
+
+{% block header %}
+    <header class="header">
+        <div class="header__content">
+            <div class="header__nav">
+                <a class="header__nav__logo" href="/">
+                  <img src="{% webpack_static 'core/img/logo.png' %}" alt="">
+                  <div>Школа UTV</div>
+                </a>
+
+                <ul class="header__nav__menu header-menu">
+                  <li class="header-menu__item">
+                    <a href="{{ about.get_absolute_url }}">О школе</a>
+                  </li>
+                  <li class="header-menu__item">
+                    <a href="/">Все курсы</a>
+                  </li>
+                  <li class="header-menu__item">
+                    <a href="/contacts">Контакты</a>
+                  </li>
+                  <li class="header-menu__item">
+                    <a href="/gallery">Галерея</a>
+                  </li>
+                </ul>
+
+                <div class="header__nav__contacts">
+                  <a href="tel:{{ common_info.number }}">
+                    <span class="icon icon-call"></span>
+                      {{ common_info.number }}
+                  </a>
+                </div>
+            </div>
+
+            {% block info %}
+                <div class="header__title">{{ common_info.headline }}</div>
+                <div class="header__desc">{{ common_info.description }}</div>
+                <div class="header__decor">
+                    <img src="{% webpack_static 'core/img/decor-header.png' %}" alt="">
+                </div>
+                <button type="button" class="button button_modal_open">Подробнее о курсах</button>
+            {% endblock %}
+        </div>
+    </header>
+{% endblock %}

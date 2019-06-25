@@ -1,0 +1,68 @@
+/*
+**  Страница `Контакты`
+*/
+.contacts {
+  margin: 0 20px 65px 20px;
+
+  @media (min-width: 769px) {
+    margin-bottom: 55px;
+    margin-left: 0;
+    margin-right: 0;
+    column-count: 2;
+  }
+
+  @media (min-width: 1025px) {
+    margin-left: 9%;
+    margin-right: 9%;
+  }
+
+  @media (min-width: 1310px) {
+    column-count: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.contacts__item {
+  color: #000;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+
+  a {
+    display: flex;
+    align-items: center;
+    color: #000;
+  }
+
+  @media (min-width: 769px) {
+    width: auto;
+    margin-right: 15px;
+  }
+
+  .icon {
+    margin-right: 11px;
+  }
+}
+
+.map {
+  height: 365px;
+
+  iframe {
+    height: 365px !important;
+
+    @media (min-width: 1025px) {
+      height: 545px !important;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    margin-left: 9%;
+    margin-right: 9%;
+    height: 545px;
+  }
+}

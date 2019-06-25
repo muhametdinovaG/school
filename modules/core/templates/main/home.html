@@ -1,0 +1,30 @@
+{% extends 'main/inclusion/header.html' %}
+{% load static %}
+{% load webpack_static from webpack_loader %}
+
+{% block content %}
+    <div class="main__content main__content_lifted">
+        <div class="list-courses">
+            <a class="list-courses__course" href="http://kids.utv.ru">
+                <div class="list-courses__course__wrapper course-item">
+                    <div class="course-item__thumb" style="background-image: url('{% webpack_static 'core/img/kids-course.jpg' %}')"></div>
+                    <div class="course-item__text">
+                        <div class="course-item__text__title">Курс для детей</div>
+                        <div class="course-item__text__desc">Курс для начинающих операторов “Основы операторского мастерства”</div>
+                    </div>
+                </div>
+            </a>
+            {% for course in courses %}
+                <a class="list-courses__course" href="{{ course.get_absolute_url }}">
+                    <div class="list-courses__course__wrapper course-item">
+                        <div class="course-item__thumb" style="background-image: url('{{ course.stub.url }}')"></div>
+                        <div class="course-item__text">
+                            <div class="course-item__text__title">{{ course.headline }}</div>
+                            <div class="course-item__text__desc">{{ course.description }}</div>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

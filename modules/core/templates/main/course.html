@@ -1,0 +1,175 @@
+{% extends 'main/inclusion/header.html' %}
+{% load static embed_video_tags %}
+{% load webpack_static from webpack_loader %}
+
+{% block page_title %}{{ course.headline }}{% endblock %}
+
+{% block info %}
+    <div class="header__title">{{ course.headline }}</div>
+    <div class="header__desc">{{ course.description }}</div>
+
+      <div class="header__decor header__decor_course">
+        <img src="{{ course.manager.photo_manager.url }}" alt="">
+        <div class="header__decor__text decor-text">
+          <p class="decor-text__name">{{ course.manager.name }}</p>
+          <p class="decor-text__label">{{ course.manager.post }}</p>
+        </div>
+      </div>
+
+      <button button="type" class="button button_modal_open">Оставить заявку</button>
+      <p>Или получить <a href="#" class="button_modal_open">консультацию</a></p>
+{% endblock %}
+
+{% block content %}
+    <div class="main__content main__content_lifted">
+        <div class="course-category">
+            <div class="course-category__title title">Вы задумывались, почему люди делятся на две категории?</div>
+            <div class="course-category__content category-content">
+                <div class="category-content__container category">
+                    <div class="category__title">
+                        <span class="icon icon-smile-sad"></span>
+                        {{ category.headline_other }}</div>
+                    <div class="category__list">
+                        {{ category.text_other|safe }}
+                    </div>
+                </div>
+
+                <div class="category-content__container category">
+                    <div class="category__title">
+                        <span class="icon icon-smile"></span>
+                        {{ category.headline_your }}</div>
+                    <div class="category__list">
+                        {{ category.text_your|safe }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main__content">
+        <div class="separator">
+            <img src="{%  webpack_static 'core/img/logo.png' %}" alt="">
+            Взгляни по-новому на мир кино и телевидения
+        </div>
+
+      <div class="course-video">
+          <div class="course-video__wrap">
+              {% video course.video as my_video %}
+                <iframe width="100%" src="{{ my_video.get_url }}" frameborder="0" allowfullscreen></iframe>
+              {% endvideo %}
+          </div>
+      </div>
+
+      <div class="course-teacher teacher">
+          <div class="teacher__name">{{ course.manager.name }}</div>
+          <div class="teacher__label">{{ course.manager.post }}</div>
+
+          {% for manager_note in course.manager.manager_note.all %}
+              <ul class="teacher__notes">
+                  <li class="teacher__notes__note">{{ manager_note.notes }}</li>
+              </ul>
+          {% endfor %}
+
+          <img class="teacher__decor" src="{{ course.manager.photo_manager.url }}" alt="">
+      </div>
+
+      <div class="course-target">
+          {% for auditory in course.auditory_cours.all %}
+          <div class="course-target__item target-item">
+              <img class="target-item__icon" src="{{ auditory.icon.url }}" alt="">
+              <div class="target-item__text">
+                  <div class="target-item__text__title">{{ auditory.headline }}</div>
+                  <div class="target-item__text__desc">{{ auditory.text }}</div>
+              </div>
+          </div>
+          {% endfor %}
+
+          <button type="button" class="button button_modal_open">Оставить заявку</button>
+      </div>
+
+      <div class="course-profit profit">
+          <div class="profit__title title">Что вы получите на наших курсах?</div>
+          <div class="profit__list">
+              {% for skill in course.skills_cours.all %}
+                  <div class="profit__list__item profit-item">
+                      <div class="profit-item__thumb" style="background-image: url('{{ skill.picture.url }}')"></div>
+                      <div class="profit-item__text">
+                          <div class="profit-item__text__title">{{ skill.headline }}</div>
+                          <div class="profit-item__text__desc">{{ skill.text }}</div>
+                      </div>
+                  </div>
+              {% endfor %}
+          </div>
+      </div>
+
+        {% if course.reviews_visible %}
+          <div class="course-reviews reviews">
+              <div class="reviews__title title">Отзывы</div>
+              <div class="reviews__list">
+                  {% for review in course.cours_review.all %}
+                    <div class="reviews__list__item reviewer">
+                      <img class="reviewer__thumb" src="{{ review.picture.url }}" alt="">
+                      <div class="reviewer__text">
+                          <div class="reviewer__text__name">{{ review.name }}</div>
+                          <div class="reviewer__text__desc">{{ review.text }}</div>
+                      </div>
+                    </div>
+                  {% endfor %}
+              </div>
+          </div>
+        {% endif %}
+
+      <div class="course-schedule">
+          <div class="course-schedule__title">Учебный план
+              <span class="icon icon-arrow"></span>
+          </div>
+          <div class="course-schedule__content schedule-list">
+              {% for catalog in course.catalog_cours.all %}
+                  <div class="schedule-list__item">
+                      {{ catalog.text }}
+                  </div>
+              {% endfor %}
+          </div>
+      </div>
+
+      <div class="course-stage">
+          <div class="course-stage__title title">Что входит в обучение</div>
+          <div class="course-stage__content">
+              <p>{{ course.schedule }}</p>
+              <div class="stages">
+                  <div class="stages__item">
+                      <div class="stages__item__decor">
+                          <span class="icon icon-checked"></span>
+                      </div>
+                  </div>
+
+                  <div class="stages__item">
+                      <div class="stages__item__decor">
+                          <span class="icon icon-checked"></span>
+                      </div>
+                  </div>
+
+                  <div class="stages__item">
+                      <div class="stages__item__decor">
+                          <span class="icon icon-checked"></span>
+                      </div>
+                  </div>
+
+                  <div class="stages__item">
+                      <div class="stages__item__decor">
+                          <span class="icon icon-checked"></span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-cost">
+          <div class="course-cost__title title">{{ course.cost_headlone }}</div>
+          <div class="course-cost__content">
+              <p>{{ course.cost_text }}</p>
+              <button type="button" class="button button_modal_open">Оставить заявку</button>
+          </div>
+      </div>
+    </div>
+{% endblock %}

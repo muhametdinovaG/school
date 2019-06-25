@@ -1,0 +1,13 @@
+{% extends 'main/inclusion/header.html' %}
+{% load static %}
+
+{% block page_title %}Страница не найдена{% endblock %}
+{% block content %}
+    <div class="main__content main__content_lifted main__content_error">
+        <div class="title">404</div>
+        <div class="desc">
+            <p>Страница не найдена</p>
+            <p>Вы обратились к странице или файлу, которого не существует.</p>
+        </div>
+    </div>
+{% endblock %}

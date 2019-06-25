@@ -1,0 +1,21 @@
+.course-video {
+  margin: 50px 20px;
+  max-width: 968px;
+
+  @media (min-width: 1025px) {
+    margin: 95px auto;
+  }
+}
+
+.course-video__wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+
+  iframe {
+    position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+  }
+}

@@ -1,0 +1,33 @@
+{% extends 'main/inclusion/header.html' %}
+{% load static %}
+
+{% block page_title %}Галерея{% endblock %}
+{% block content %}
+<div class="main__content main__content_lifted">
+      <div class="main__content__title title">Галерея</div>
+      <div class="main__content__body">
+        <div class="slider">
+            {% for slide in slides %}
+            <div class="slider__item fade">
+                <img class="slider__item__img" src="{{ slide.pic.url }}" alt="">
+            </div>
+            {% endfor %}
+
+          <div class="slider__controls">
+            <button type="button" class="button button_icon controls controls_prev" id="toPrevSlide">
+              <span class="icon icon-arrow"></span>
+            </button>
+            <button type="button" class="button button_icon controls controls_next" id="toNextSlide">
+              <span class="icon icon-arrow"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="slider-dots">
+            {% for slide in slides %}
+                <span class="slider-dots__item"></span>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+{% endblock %}

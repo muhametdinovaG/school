@@ -1,0 +1,36 @@
+.separator {
+  background-color: #14B8EB;
+  color: #fff;
+  padding: 28px 20px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+
+  @media (min-width: 769px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (min-width: 1025px) {
+    font-size: 25px;
+  }
+
+  img {
+    margin: 0 auto 18px;
+
+    @media (min-width: 769px) {
+      margin: 0 15px 0 0;
+    }
+  }
+}
+
+@import "_course-cost";
+@import "_course-profit";
+@import "_course-reviews";
+@import "_course-schedule";
+@import "_course-stage";
+@import "_course-teacher";
+@import "_course-category";
+@import "_course-video";
+@import "_course-target";

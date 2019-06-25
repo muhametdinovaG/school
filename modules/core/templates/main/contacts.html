@@ -1,0 +1,38 @@
+{% extends 'main/inclusion/header.html' %}
+{% load static %}
+
+{% block page_title %}Контакты{% endblock %}
+{% block content %}
+    <div class="main__content main__content_lifted">
+      <div class="main__content__title title">Контакты</div>
+      <div class="main__content__body">
+        <ul class="contacts">
+          <li class="contacts__item">
+            <a href="tel:{{ common_info.number }}">
+              <span class="icon icon-call"></span>
+              {{ common_info.number }}
+            </a>
+          </li>
+          <li class="contacts__item">
+            <span class="icon icon-location"></span>
+            {{ common_info.address }}
+          </li>
+          <li class="contacts__item">
+            <a href="{{ common_info.inst_link }}" target="_blank">
+              <span class="icon icon-instagram"></span>
+              {{ common_info.inst_link }}
+            </a>
+          </li>
+          <li class="contacts__item">
+            <a href="{{ common_info.vk_link }}" target="_blank">
+              <span class="icon icon-vk"></span>
+              {{ common_info.vk_link }}
+            </a>
+          </li>
+        </ul>
+        <div class="map">
+          {{ common_info.map|safe }}
+        </div>
+      </div>
+    </div>
+{% endblock %}

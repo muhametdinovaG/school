@@ -1,0 +1,106 @@
+@import "~reset-css/sass/reset";
+@import "_fonts";
+@import "_vars";
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  outline: none;
+}
+
+img {
+  display: table;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+  background-color: #fff;
+  color: #000;
+}
+
+body {
+  font: $size_default_sm $roboto_regular;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: none;
+
+  @media (min-width: 1025px) {
+    font-size: $size_default;
+    margin-bottom: 317px;
+  }
+}
+
+.main {
+  margin-top: 35px;
+  margin-bottom: 20px;
+
+  @media (min-width: 1025px) {
+    margin-bottom: 0;
+  }
+}
+
+.main__content_lifted {
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  position: relative;
+
+  @media (min-width: 769px) {
+    padding: 0 30px;
+    margin-left: 45px;
+    margin-right: 45px;
+  }
+
+  @media (min-width: 1025px) {
+    padding-top: 28px;
+    padding-bottom: 28px;
+    margin-top: -245px;
+    margin-left: 76px;
+    margin-right: 76px;
+  }
+}
+
+.main__content__title {
+  @extend .title;
+  padding-top: 60px;
+  margin-bottom: 35px;
+
+  @media (min-width: 1025px) {
+    padding-top: 0;
+    margin-bottom: 55px;
+  }
+}
+
+.title {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: $size_title_sm;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+
+  @media (min-width: 1025px) {
+    font-size: $size_title;
+  }
+}
+
+
+@import "components/_header";
+@import "components/_button";
+@import "components/_input";
+@import "components/_modal";
+@import "components/_slider";
+@import "components/_icon";
+@import "components/_footer";
+
+@import "pages/course/_course";
+@import "pages/_home";
+@import "pages/_contacts";
+@import "pages/_simple_page";
+@import "pages/_404_500_errors";

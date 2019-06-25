@@ -1,0 +1,84 @@
+.course-teacher {
+  background: radial-gradient(375.56px at 50% 50%, #06A6D0 0%, #015D82 100%);
+  color: #fff;
+  padding: 49px 20px 68% 20px;
+  position: relative;
+
+  @media (min-width: 769px) {
+    padding-left: 10%;
+    padding-right: 25%;
+    padding-bottom: 25%;
+  }
+
+  @media (min-width: 1025px) {
+    padding-left: 20%;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 25px;
+    background-color: #242424;
+    clip-path: polygon(100% 0%, 50% 100%, 0% 0%, 0% 100%, 100% 100%);
+    -webkit-clip-path: polygon(100% 0%, 50% 100%, 0% 0%, 0% 100%, 100% 100%);
+
+    @media (min-width: 769px) {
+      height: 58px;
+    }
+  }
+}
+
+.teacher__name {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.teacher__label {
+  margin-top: 6px;
+  font-style: italic;
+}
+
+.teacher__notes {
+  margin-top: 38px;
+  position: relative;
+  z-index: 1;
+  padding-left: 60px;
+}
+
+.teacher__notes__note {
+  margin-bottom: 28px;
+  max-width: 690px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    margin-top: 7px;
+    background: url('../img/icons/calendar.svg') no-repeat center;
+    width: 35px;
+    height: 35px;
+    color: #fff;
+  }
+}
+
+.teacher__decor {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  max-width: 35%;
+
+  @media (min-width: 769px) {
+    transform: none;
+    left: auto;
+    right: 10%;
+    max-width: 23%;
+  }
+}

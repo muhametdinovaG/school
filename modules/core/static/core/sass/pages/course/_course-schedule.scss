@@ -1,0 +1,74 @@
+.course-schedule__title {
+  background-color: $button_orange;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    width: 19px;
+    height: 11px;
+    transform: rotate(-90deg);
+    margin-left: 20px;
+    transition: all .1s linear;
+
+    &:before {
+      width: 19px;
+      height: 11px;
+      font-size: 19px;
+    }
+  }
+}
+
+.course-schedule__title_active {
+  .icon {
+    transform: rotate(90deg);
+  }
+}
+
+.schedule-list {
+  opacity: 0;
+  position: relative;
+  top: -1000px;
+  height: 0;
+  z-index: -1;
+  counter-reset: list;
+  transition: opacity .2s linear;
+
+  @media (min-width: 769px) {
+    column-count: 2;
+    column-gap: 30px;
+  }
+
+  @media (min-width: 1025px) {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+
+.schedule-list_active {
+  opacity: 1;
+  top: 0;
+  z-index: 0;
+  height: auto;
+  padding: 40px 20px 50px;
+
+  @media (min-width: 769px) {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 90px;
+  }
+}
+
+.schedule-list__item {
+  line-height: 30px;
+
+  &:before {
+    counter-increment: list;
+    content: counter(list) " урок. "
+  }
+}

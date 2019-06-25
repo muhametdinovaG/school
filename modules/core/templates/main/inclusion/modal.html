@@ -1,0 +1,26 @@
+{% load static %}
+{% load webpack_static from webpack_loader %}
+
+<div class="modal">
+    <div class="modal__dialog">
+        <div class="modal__dialog__content dialog-content">
+            <img src="{% webpack_static 'core/img/logo.png' %}" alt="">
+            <div class="dialog-content__title title">Обратный звонок</div>
+            <div class="dialog-content__body">
+              Пожалуйста, введите номер, на который Вам перезвонить
+            </div>
+            <form class="form" id="formFeedback" data-feedback="{% url 'feedback' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="text" class="input" name="phone_number" id="phoneNumber" maxlength="11">
+                <div class="captcha">
+                    {{ feedback_form.captcha }}
+                    <p>Неверно указан код</p>
+                </div>
+                <button type="button" class="button" id="btnSend" disabled>Отправить</button>
+            </form>
+        </div>
+        <button type="button" class="button button_icon" id="btnModalClose">
+            <span class="icon icon-close"></span>
+        </button>
+    </div>
+</div>

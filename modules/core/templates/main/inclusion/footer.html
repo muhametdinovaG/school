@@ -1,0 +1,40 @@
+{% load static %}
+
+{% block footer %}
+<footer class="footer">
+    <div class="footer__content">
+        <div class="footer__contacts">
+            <div class="footer__contacts__item">
+                <a href="tel:{{ common_info.number }}">
+                    <span class="icon icon-call"></span>
+                    {{ common_info.number }}
+                </a>
+            </div>
+            <div class="footer__contacts__item">
+                <span class="icon icon-location"></span>
+                {{ common_info.address }}
+            </div>
+        </div>
+        <div class="footer__social">
+            <a href="{{ common_info.inst_link }}" class="footer__social__item" target="_blank">
+                <span class="icon icon-instagram"></span>
+            </a>
+            <a href="{{ common_info.vk_link }}" class="footer__social__item" target="_blank">
+                <span class="icon icon-vk"></span>
+            </a>
+        </div>
+
+        <ul class="footer__menu">
+{#            <li class="footer__menu__item"><a href="{{ common_info.contract_offer.url }}">#}
+{#                Договор оферты#}
+{#            </a></li>#}
+            <li class="footer__menu__item"><a href="{{ common_info.privacy_policy.url }}">
+                Политика конфиденциальности
+            </a></li>
+        </ul>
+
+        <p>{{ common_info.footer_text }}</p>
+        <p>Разработка сайта <a href="https://www.ufanet.ru" target="_blank">АО «Уфанет»</a></p>
+    </div>
+</footer>
+{% endblock %}
